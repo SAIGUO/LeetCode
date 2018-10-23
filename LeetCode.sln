@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TwoSum", "TwoSum\TwoSum.vcxproj", "{88DF00E4-FDED-42AF-96C1-F872320F0881}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "001_TwoSum", "TwoSum\TwoSum.vcxproj", "{88DF00E4-FDED-42AF-96C1-F872320F0881}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "002_AddTwoNumbers", "AddTwoNumbers\AddTwoNumbers.vcxproj", "{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{88DF00E4-FDED-42AF-96C1-F872320F0881}.Release|x64.Build.0 = Release|x64
 		{88DF00E4-FDED-42AF-96C1-F872320F0881}.Release|x86.ActiveCfg = Release|Win32
 		{88DF00E4-FDED-42AF-96C1-F872320F0881}.Release|x86.Build.0 = Release|Win32
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Debug|x64.ActiveCfg = Debug|x64
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Debug|x64.Build.0 = Debug|x64
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Debug|x86.ActiveCfg = Debug|Win32
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Debug|x86.Build.0 = Debug|Win32
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Release|x64.ActiveCfg = Release|x64
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Release|x64.Build.0 = Release|x64
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Release|x86.ActiveCfg = Release|Win32
+		{58F375BD-98E8-4E01-AACE-7E55EEEA5F7E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
