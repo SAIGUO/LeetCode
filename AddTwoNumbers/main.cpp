@@ -24,6 +24,8 @@ struct ListNode {
 	ListNode(int x) : val(x), next(NULL) {}
 };
 
+//gss
+/*
 class Solution {
 public:
 	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -60,6 +62,31 @@ public:
 		}
 		
 		return pResultHead;
+	}
+};*/
+
+class Solution {
+public:
+	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+		ListNode* pHead1 = l1, *pHead2 = l2;
+		ListNode* pResult = new ListNode(0);
+		ListNode* pResultHead = pResult;
+
+		int Carry = 0;
+		while (pHead1 != NULL || pHead2 != NULL)
+		{
+			int V1 = pHead1 != NULL ? pHead1->val : 0;
+			int V2 = pHead2 != NULL ? pHead2->val : 0;
+			pResult->next = new ListNode((V1 + V2 + Carry) % 10);
+			pResult = pResult->next;
+			if (pHead1 != NULL) pHead1 = pHead1->next;
+			if (pHead2 != NULL) pHead2 = pHead2->next;
+			Carry = (V1 + V2 + Carry) / 10;
+		}
+		if (Carry == 1)
+			pResult->next = new ListNode(1);
+
+		return pResultHead->next;
 	}
 };
 
