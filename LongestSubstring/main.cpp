@@ -1,9 +1,14 @@
 #include <iostream>
 #include <string>
 #include <assert.h>
+#include <algorithm>
+#include <vector>
+#include <unordered_map>
 
 using namespace std;
 
+//´æÔÚbug
+/*
 class Solution {
 public:
 	int lengthOfLongestSubstring(string s) {
@@ -35,6 +40,50 @@ public:
 			}
 		}
 		return MaxSub;
+	}
+};*/
+
+/*
+class Solution {
+public:
+	int lengthOfLongestSubstring(string s) {
+		int m[256] = {-1};
+        int res = 0, left = -1;
+        for (int i = 0; i < s.size(); ++i) {
+            left = max(left, m[s[i]]);
+            m[s[i]] = i;
+            res = max(res, i - left);
+        }
+        return res;
+	}
+};*/
+
+/*
+class Solution {
+public:
+	int lengthOfLongestSubstring(string s) {
+		vector<int> m(256, -1);
+		int res = 0, left = -1;
+		for (int i = 0; i < s.size(); ++i) {
+			left = max(left, m[s[i]]);
+			m[s[i]] = i;
+			res = max(res, i - left);
+		}
+		return res;
+	}
+};*/
+
+class Solution {
+public:
+	int lengthOfLongestSubstring(string s) {
+		unordered_map<char, int> m;
+		int res = 0, left = 0;
+		for (int i = 0; i < s.size(); ++i) {
+			left = max(left, m[s[i]]);
+			m[s[i]] = i + 1;
+			res = max(res, i - left + 1);
+		}
+		return res;
 	}
 };
 
