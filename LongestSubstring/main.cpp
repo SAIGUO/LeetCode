@@ -7,30 +7,31 @@ using namespace std;
 class Solution {
 public:
 	int lengthOfLongestSubstring(string s) {
-		char *p1;
-		char *p2;
+		char *p1, *p2, *Cur;
 		int MaxSub = 1;
 		if (s.length() == 0) return 0;
 		for (int i = 0; i < s.length() - 1; i++)
 		{
-			int Len = 1;
-			p1 = &s[i];
+			int Len = 0;
+			Cur = p1 = &s[i];
 			p2 = p1+1;
+			if (*p1 == *p2 || *p2 == '\0')
+			{
+				Len = 1;
+				MaxSub = MaxSub > Len ? MaxSub : Len;
+				continue;
+			}
 			while (*p1 != '\0' && *p2 != '\0')
 			{
-				if (*p1 != *p2)
+				Len = 0;
+				while (p1 <= p2)
 				{
-					p2++;
-					Len++;
-					MaxSub = MaxSub > Len ? MaxSub : Len;
+					if (*p1 != *p2) Len++;
+					p1++;
 				}
-				else {
-					p1 = p2;
-					p2++;
-					Len = 1;
-					MaxSub = MaxSub > Len ? MaxSub : Len;
-				}
-				
+				p2++;
+				p1 = Cur;
+				MaxSub = MaxSub > Len ? MaxSub : Len;
 			}
 		}
 		return MaxSub;
