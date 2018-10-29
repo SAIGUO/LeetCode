@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include <assert.h>
 
 using namespace std;
 
+//超出时间限制
+/*
 class Solution {
 public:
 	string longestPalindrome(string s) {
@@ -39,6 +42,82 @@ public:
 			}
 		}
 		return true;
+	}
+};*/
+
+//动态规划
+/*
+class Solution {
+public:
+	string longestPalindrome(string s) {
+		int Start = 0, MaxLen = 0;
+		int Len = s.length();
+		bool P[1000][1000] = {false};
+
+		for (int i = 0; i < Len; i++)
+		{
+			P[i][i] = true;
+			Start = i;
+			MaxLen = 1;
+		}
+
+		for (int i = 0; i < Len - 1; i++)
+		{
+			if (s[i] == s[i + 1])
+			{
+				P[i][i + 1] = true;
+				Start = i;
+				MaxLen = 2;
+			}
+		}
+
+		for (int StrLen = 3; StrLen <= Len; StrLen++)
+		{
+			for (int First = 0; First <= Len - StrLen; First++)
+			{
+				int Second = First + StrLen - 1;
+				if (P[First + 1][Second - 1] && s[First] == s[Second])
+				{
+					P[First][Second] = true;
+					MaxLen = StrLen;
+					Start = First;
+				}
+			}
+		}
+		if (MaxLen > 0)
+			return s.substr(Start, MaxLen);
+		return s;
+	}
+};*/
+
+//中心扩展算法
+class Solution {
+public:
+	string longestPalindrome(string s) {
+		int First = 0, Second = 0, MaxLen = 0;
+		int Len = s.size();
+
+		for (int i = 0; i < Len; i++)
+		{
+			int StrLen1 = subStringLen(s, i, i);
+			int StrLen2 = subStringLen(s, i, i + 1);
+			int StrLen = max(StrLen1, StrLen2);
+			if (StrLen > Second - First + 1)
+			{
+				First = i - (Len - 1) / 2;
+				Second = i + Len / 2;
+			}
+		}
+	}
+
+	int subStringLen(string s, int vLeft, int vRight)
+	{
+		while (vLeft >= 0 && vRight <= s.size() && s[vLeft] == s[vRight])
+		{
+			vLeft--;
+			vRight++;
+		}
+		return vRight - vLeft - 1;
 	}
 };
 
