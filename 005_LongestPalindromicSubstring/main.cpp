@@ -94,20 +94,22 @@ public:
 class Solution {
 public:
 	string longestPalindrome(string s) {
-		int First = 0, Second = 0, MaxLen = 0;
+		int First = 0, Second = 0;
 		int Len = s.size();
 
+		if (s.size() < 1) return s;
 		for (int i = 0; i < Len; i++)
 		{
 			int StrLen1 = subStringLen(s, i, i);
 			int StrLen2 = subStringLen(s, i, i + 1);
 			int StrLen = max(StrLen1, StrLen2);
-			if (StrLen > Second - First + 1)
+			if (StrLen > Second - First)
 			{
-				First = i - (Len - 1) / 2;
-				Second = i + Len / 2;
+				First = i - (StrLen - 1) / 2;
+				Second = i + StrLen / 2;
 			}
 		}
+		return s.substr(First, Second - First + 1);
 	}
 
 	int subStringLen(string s, int vLeft, int vRight)
