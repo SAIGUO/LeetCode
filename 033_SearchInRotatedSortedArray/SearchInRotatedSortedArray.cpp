@@ -6,6 +6,18 @@
 
 using namespace std;
 
+//用STL中的find函数
+class Solution {
+public:
+	int search(vector<int>& nums, int target) {
+		if (nums.size() == 0) return -1;
+		vector<int>::iterator it = find(nums.begin(), nums.end(), target);
+		if (it == nums.end()) return -1;
+		else return it - nums.begin();
+	}
+};
+
+/*
 class Solution {
 public:
 	int search(vector<int>& nums, int target) {
@@ -32,7 +44,7 @@ public:
 		}
 		return -1;
 	}
-};
+};*/
 
 void trimLeftTrailingSpaces(string &input) {
 	input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
