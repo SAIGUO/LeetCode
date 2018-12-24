@@ -5,7 +5,39 @@
 
 using namespace std;
 
+//常规dfs
+class Solution {
+public:
+	vector<vector<int> > permute(vector<int> &num) {
+		vector<vector<int>> Res;
+		vector<bool> Visited(num.size(), false);
+		vector<int> TempOrder;
+		DFSPermute(num, Res, Visited, TempOrder);
+		return Res;
+	}
+
+	void DFSPermute(vector<int>& voNum, vector<vector<int>>& voRes, vector<bool>&voVisited, vector<int>& voTempOrder)
+	{
+		if (voTempOrder.size() == voNum.size())
+			voRes.push_back(voTempOrder);
+		else
+		{
+			for (int i = 0; i < voNum.size(); i++)
+			{
+				if (voVisited[i] == true)
+					continue;
+				voTempOrder.push_back(voNum[i]);
+				voVisited[i] = true;
+				DFSPermute(voNum, voRes, voVisited, voTempOrder);
+				voVisited[i] = false;
+				voTempOrder.pop_back();
+			}
+		}	
+	}
+};
+
 //dfs
+/*
 class Solution {
 public:
 	vector<vector<int> > permute(vector<int> &num) {
@@ -31,7 +63,7 @@ public:
 			swap(num[begin], num[i]);
 		}
 	}
-};
+};*/
 
 //使用STL中next_permutation函数，12ms
 /*

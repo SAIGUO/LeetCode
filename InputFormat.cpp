@@ -13,3 +13,5 @@
 7、vector<string> letterCombinations(string digits) {} //017
 
 8、ListNode* removeNthFromEnd(ListNode* head, int n) {} //019
+
+9、vector<vector<string>> groupAnagrams(vector<string>& strs) {} //049
