@@ -15,3 +15,5 @@
 8、ListNode* removeNthFromEnd(ListNode* head, int n) {} //019
 
 9、vector<vector<string>> groupAnagrams(vector<string>& strs) {} //049
+
+10、double myPow(double x, int n) {} //50
