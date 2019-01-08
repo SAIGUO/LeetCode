@@ -3,7 +3,26 @@
 
 using namespace std;
 
+//4ms
+int fast_io = []() {ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0); return 0; }();
+//8ms
+class Solution {
+public:
+	double myPow(double x, int n) {
+		if (n == 0) return 1;
+		if (n == 1) return x;
+		long long int m = n;
+		if (n < 0)
+		{
+			x = 1 / x;
+			m = -m;
+		}
+		return (m % 2 == 0) ? myPow(x*x, m / 2) : myPow(x*x, m / 2)*x;
+	}
+};
+
 //12ms
+/*
 class Solution {
 public:
 	double myPow(double x, int n) {
@@ -24,23 +43,6 @@ public:
 		{
 			if (m & 0x1 << i)
 				Res *= Dig[i];
-		}
-		return Res;
-	}
-};
-
-//Time Limit Exceeded
-/*
-class Solution {
-public:
-	double myPow(double x, int n) {
-		int N = sqrt(abs(n));
-		double Res = 1;
-		if (n < 0) x = 1 / x;
-		while (N > 0)
-		{
-			Res *= x;
-			N--;
 		}
 		return Res;
 	}
