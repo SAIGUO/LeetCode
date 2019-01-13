@@ -1,3 +1,5 @@
+int fast_io = [](){ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);return 0;}();
+
 1、vector<int> twoSum(vector<int> &nums, int target){} //001
 	
 2、ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {} //002
