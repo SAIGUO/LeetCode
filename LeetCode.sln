@@ -65,6 +65,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "056_MergeIntervals", "056_M
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "062_UniquePaths", "062_UniquePaths\062_UniquePaths.vcxproj", "{C4BAAD3E-52EB-496F-9593-A868C258A65B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "069_Sqrt(x)", "069_Sqrt(x)\069_Sqrt(x).vcxproj", "{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -321,6 +323,14 @@ Global
 		{C4BAAD3E-52EB-496F-9593-A868C258A65B}.Release|x64.Build.0 = Release|x64
 		{C4BAAD3E-52EB-496F-9593-A868C258A65B}.Release|x86.ActiveCfg = Release|Win32
 		{C4BAAD3E-52EB-496F-9593-A868C258A65B}.Release|x86.Build.0 = Release|Win32
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Debug|x64.ActiveCfg = Debug|x64
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Debug|x64.Build.0 = Debug|x64
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Debug|x86.ActiveCfg = Debug|Win32
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Debug|x86.Build.0 = Debug|Win32
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Release|x64.ActiveCfg = Release|x64
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Release|x64.Build.0 = Release|x64
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Release|x86.ActiveCfg = Release|Win32
+		{D6B56680-6A3E-4F3A-AEA1-D3FF0D9FE910}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
